@@ -1,0 +1,13 @@
+.like-button {
+    background-color: whitesmoke;
+    color: rgb(253, 58, 58);
+}
+
+.dis-buttton {
+    background-color: whitesmoke;
+    color: slateblue;
+}
+
+.cards {
+    display: grid;
+}

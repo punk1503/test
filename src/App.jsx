@@ -1,5 +1,6 @@
 import './App.css';
 import CardBlock from './CardBlock/CardBlock.jsx';
+import hljs from 'highlight.js'
 
 // function TicketBlock({name}) {
 //   return <h1 style={{'color': 'white'}}>{name}</h1>
@@ -29,6 +30,7 @@ import CardBlock from './CardBlock/CardBlock.jsx';
 // }
 
 function App() {
+  const highlightedCode = hljs.highlight('<span>Hello World!</span>', {language: 'html'}).value
   return (
     <>
       <div className="App">
@@ -44,6 +46,7 @@ function App() {
             [{name: "React", bg_color: "#006fe6"}, 
             {name: "JS", bg_color: "#ebd94e"}, 
             {name: "Angular", bg_color: "#e60000"}],
+          code: highlightedCode
         }}/>
       </div>
     </>

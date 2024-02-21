@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./UserCard.css";
 import hljs from "highlight.js";
+import "highlight.js/styles/default.css"
 
 function PhotoGallery({ photos }) {
   const [currentPhotoID, setCurrentPhotoID] = useState(0);
@@ -50,11 +51,11 @@ function PhotoGallery({ photos }) {
 
 function UserCard({ name, age, description, photos, technologies, code }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const codeRef = useRef(null);
 
   useEffect(() => {
-    hljs.highlightBlock(codeRef.current);
-  }, [code]);
+    const nodes = document.querySelectorAll('pre code')
+    nodes.forEach(node => hljs.highlightBlock(node))
+  })
 
   return (
     <div className="card_block">
@@ -84,8 +85,8 @@ function UserCard({ name, age, description, photos, technologies, code }) {
           </div>
         </div>
         <div className={"back " + (isFlipped ? "back--flipped" : "")}>
-          <pre>
-            <code ref={codeRef}>{code}</code>
+          <pre className="code_block">
+            <code className="code_block">{code}</code>
           </pre>
         </div>
       </div>

@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "highlight.js": "^11.9.0",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-highlight": "^0.15.0"
   }
 }

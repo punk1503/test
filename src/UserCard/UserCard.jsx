@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./UserCard.css";
 import hljs from "highlight.js";
-import "highlight.js/styles/default.css"
+import '/node_modules/highlight.js/styles/atom-one-dark.css'
 
 function PhotoGallery({ photos }) {
   const [currentPhotoID, setCurrentPhotoID] = useState(0);
@@ -49,13 +49,13 @@ function PhotoGallery({ photos }) {
   );
 }
 
-function UserCard({ name, age, description, photos, technologies, code }) {
+function UserCard({ name, age, description, photos, technologies, code, theme }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const nodes = document.querySelectorAll('pre code')
     nodes.forEach(node => hljs.highlightBlock(node))
-  })
+  }, [theme]);
 
   return (
     <div className="card_block">

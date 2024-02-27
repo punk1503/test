@@ -1,5 +1,6 @@
 import './App.css';
 import CardBlock from './CardBlock/CardBlock.jsx';
+import TicketCardDemo from "./TicketCardDemo/TicketCardDemo"
 
 // function TicketBlock({name}) {
 //   return <h1 style={{'color': 'white'}}>{name}</h1>
@@ -31,7 +32,13 @@ import CardBlock from './CardBlock/CardBlock.jsx';
 function App() {
 	return (
 		<>
-			<div className="App">
+		<div style={{'display': 'flex', 'flex-direction': 'row', 'height': '100dvh'}}>
+			<TicketCardDemo text="1"></TicketCardDemo>
+			<TicketCardDemo text="2"></TicketCardDemo>
+			<TicketCardDemo text="3"></TicketCardDemo>
+		</div>
+
+			{/* <div className="App">
 				<CardBlock card_data={{
 					name:"Andrey",
 					age:19 ,
@@ -73,7 +80,7 @@ function MiniNavBar({children}) {
 }
 `
 				}}/>
-			</div>
+			</div> */}
 		</>
 	);
 }
